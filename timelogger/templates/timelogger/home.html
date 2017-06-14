@@ -1,6 +1,7 @@
-{% extends 'header.html' %}
+{% extends 'timelogger/header.html' %}
 
 {% block content %}
-  <h2>Homepage</h2>
-  <p>Hello {{ user.username }}!</p>
+    {% for post in object_list %}
+        <a href="/timelogger/{{ post.id }}"><h5>{{ post.last_namef }}</h5></a>
+    {% endfor %}
 {% endblock %}
