@@ -51,6 +51,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'timelogging.urls'
+LOGIN_URL='/login'
 
 TEMPLATES = [
     {

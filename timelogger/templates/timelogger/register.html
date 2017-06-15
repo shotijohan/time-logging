@@ -1,0 +1,48 @@
+{% extends "timelogger/header.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <form action="/register-member" method="post">
+                {% csrf_token %}
+                <div class="col-md-offset-4 col-md-4 col-md-offset-4" >
+                    <legend style="color:white;">Register</legend>
+                    <div>
+                        <label for="email" >First Name</label>
+                        <input type="text" name="first_name" placeholder="First Name" class="form-control" autofocus>
+                    </div>
+                    <div>
+                        <label for="email" >Last Name</label>
+                        <input type="text" name="last_name" placeholder="Last Name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="email" >Email</label>
+                        <input type="text" name="email" placeholder="Email" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="email" >Username</label>
+                        <input type="text" name="username" placeholder="Username" class="form-control" required>
+                    </div>
+                    <div>
+                        <label for="password" >Password</label>
+                        <input type="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                    <div>
+                        <label for="password" >Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary col-md-12" style="margin-top:20px">Register</button>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/login/" class="btn btn-danger col-md-12" style="margin-top: 20px;">
+                                Cancel
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

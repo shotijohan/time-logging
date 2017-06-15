@@ -22,8 +22,8 @@ class User_accounts(models.Model):
             "first_name": self.first_name,
             "email": self.email,
             "password": self.password,
-            "created_date": self.created_date,
-            "updated_date": self.updated_date,
+            "created_date": self.created_date.strftime("%m/%d/%Y"),
+            "updated_date": self.updated_date.strftime("%m/%d/%Y"),
         }
         return response
 
