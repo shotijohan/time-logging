@@ -1,8 +1,19 @@
 {% extends 'timelogger/header.html' %}
 
 {% block content %}
+    <div style="text-align: center;">
+        <div id="timer">
+
+        </div>
+        {% if status and status == 'in progress'%}
+            <button class="btn btn-danger btn-xl" id="timein-timeout" action="time-out" time-id="{{ time.id }}">TIME OUT!</button>
+        {% else %}
+            <button class="btn btn-primary btn-xl" id="timein-timeout" action="time-in" time-id="">TIME IN!</button>
+        {% endif %}
+    </div>
+
     {% for post in object_list %}
         <a href="/timelogger/{{ post.id }}"><h5>{{ post.last_namef }}</h5></a>
     {% endfor %}
-    <button class="btn btn-primary btn-xl">START!</button>
+
 {% endblock %}

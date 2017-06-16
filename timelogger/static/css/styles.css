@@ -2,3 +2,8 @@ html, body{
     height:100%;
     color:white;
 }
+
+.account-name{
+    padding-right: 1%;
+    font-size:1.3em;
+}

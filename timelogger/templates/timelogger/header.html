@@ -22,7 +22,14 @@
                 </div>
             </div>
 		</div>
-        <div class="pull-right"><a href="/logout" class="btn btn-danger">Logout</a></div>
+        {% if user.is_authenticated %}
+            <div class="pull-right">
+                <a href="/logout" class="btn btn-danger btn-xs">Logout</a>
+            </div>
+            <span class="pull-right account-name">
+                <strong>{{ user.last_name }}, {{ user.first_name }} </strong>
+            </span>
+        {% endif %}
         <br>
         <hr>
 
@@ -52,12 +59,22 @@
             </div>
         </div>
 	</div>
+    <div id="sampleArea">
+
+    </div>
 	<footer>
 		<div class="container-fluid" style='margin-left:15px'>
 			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
 		</div>
 	</footer>
-
+    {% verbatim %}
+    <script id="template" type="x-tmpl-mustache">
+        <h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}
+    </script>
+    {% endverbatim %}
+    <script src="{% static 'js/require.js' %}"></script>
+    <script src="{% static 'js/config.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
