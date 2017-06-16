@@ -33,6 +33,7 @@
 
 
         function toggleButton(this_, response){
+            console.log(response.action);
             $(this_).removeClass("btn-primary");
             $(this_).removeClass("btn-danger");
             $(this_).addClass((response.action == "time-in") ? "btn-primary" : "btn-danger");

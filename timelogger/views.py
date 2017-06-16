@@ -20,7 +20,7 @@ from .constants import *
 
 # Create your views here.
 def to_hours(seconds_var):
-    return int(seconds_var / 3600)
+    return float(seconds_var / 3600)
 
 
 def render_json(response_data):
@@ -32,11 +32,13 @@ class Login(View):
     def get(self, request):
         if request.user.is_authenticated():
             jinja_data = {}
-            pprint(request.user)
-            time = TimeInTimeOut.objects.get(user_id=request.user, duration=0)
+            time = TimeInTimeOut.objects
+            time = time.filter(user=request.user)
+            time = time.filter(duration=0.0)
+
             if time:
                 jinja_data['status'] = "in progress"
-                jinja_data['time'] = time
+                jinja_data['time'] = time[0]
             jinja_data['user'] = request.user
             return render(request, 'timelogger/home.html', jinja_data)
         return render(request, 'timelogger/login.html')
@@ -44,7 +46,6 @@ class Login(View):
     def post(self, request):
         post_data = request.POST
         if post_data:
-            pprint(post_data)
             user = authenticate(
                 username=post_data.get("username"),
                 password=post_data.get("password")
@@ -72,7 +73,6 @@ class Register(View):
                 last_name=post_data.get('last_name'),
                 password=post_data.get('password'),
             )
-            pprint(post_data)
             user_auth = authenticate(
                 username=post_data.get('username'),
                 password=post_data.get('password')
@@ -95,7 +95,6 @@ class TimeInTimeOutHandler(View):
 
     def post(self, request):
         if request.user.is_authenticated():
-            pprint(request.POST['action'])
             if request.POST['action'] == "time-in":
                 time = TimeInTimeOut()
                 time.user = request.user
@@ -115,7 +114,7 @@ class TimeInTimeOutHandler(View):
                     if time:
                         time.time_out = datetime.utcnow().replace(tzinfo=pytz.utc)
                         time_diff = time.time_out - time.time_in
-                        time.duration = to_hours(int(time_diff.total_seconds()))
+                        time.duration = to_hours(float(time_diff.total_seconds()))
                         time.save()
                         response_data = {
                             "message": "OK!",

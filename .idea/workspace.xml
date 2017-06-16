@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82b67195-9435-48fe-add7-bc483051962b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/johhan.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/timelogger/static/js/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/timelogger/static/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/timelogger/static/js/moment.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/timelogger/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/timelogger/migrations/0002_auto_20170614_1050.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/admin.py" afterPath="$PROJECT_DIR$/timelogger/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/models.py" afterPath="$PROJECT_DIR$/timelogger/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/static/css/styles.css" afterPath="$PROJECT_DIR$/timelogger/static/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/templates/timelogger/header.html" afterPath="$PROJECT_DIR$/timelogger/templates/timelogger/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/templates/timelogger/home.html" afterPath="$PROJECT_DIR$/timelogger/templates/timelogger/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/urls.py" afterPath="$PROJECT_DIR$/timelogger/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/static/js/main.js" afterPath="$PROJECT_DIR$/timelogger/static/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timelogger/views.py" afterPath="$PROJECT_DIR$/timelogger/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/timelogger/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
+            <state relative-caret-position="126">
+              <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
               <folding>
                 <element signature="e#24#61#0" expanded="true" />
               </folding>
@@ -43,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/timelogger/static/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="116">
+              <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -81,8 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>User_accoutn</find>
-      <find>TimeInTimeOut</find>
       <find>Jqueyr</find>
       <find>jquery</find>
       <find>asd</find>
@@ -90,7 +76,6 @@
       <find>time</find>
       <find>datetime.datetime.</find>
       <find>post</find>
-      <find>pprint</find>
       <find>none</find>
       <find>to_hours</find>
       <find>total</find>
@@ -111,6 +96,9 @@
       <find>register</find>
       <find>time-out</find>
       <find>time_in</find>
+      <find>get</find>
+      <find>pprint</find>
+      <find>toupper</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/timelogging</dir>
@@ -143,8 +131,8 @@
         <option value="$PROJECT_DIR$/timelogger/templates/timelogger/home.html" />
         <option value="$PROJECT_DIR$/timelogger/models.py" />
         <option value="$PROJECT_DIR$/timelogger/admin.py" />
-        <option value="$PROJECT_DIR$/timelogger/views.py" />
         <option value="$PROJECT_DIR$/timelogger/static/js/main.js" />
+        <option value="$PROJECT_DIR$/timelogger/views.py" />
       </list>
     </option>
   </component>
@@ -155,7 +143,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1327" />
+    <option name="x" value="1953" />
     <option name="y" value="310" />
     <option name="width" value="1327" />
     <option name="height" value="770" />
@@ -553,7 +541,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1327" y="310" width="1327" height="770" extended-state="6" />
+    <frame x="1953" y="310" width="1327" height="770" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298193" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -610,14 +598,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/timelogger/static/js/main.js</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
@@ -1041,21 +1021,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timelogger/views.py">
+    <entry file="file://$PROJECT_DIR$/timelogger/static/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="115" column="40" lean-forward="true" selection-start-line="115" selection-start-column="40" selection-end-line="115" selection-end-column="40" />
-          <folding>
-            <element signature="e#24#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="116">
+          <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timelogger/static/js/main.js">
+    <entry file="file://$PROJECT_DIR$/timelogger/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="126">
+          <caret line="36" column="44" lean-forward="false" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding>
+            <element signature="e#24#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
