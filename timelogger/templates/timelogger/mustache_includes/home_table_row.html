@@ -1,0 +1,32 @@
+{% verbatim %}
+<script id="dataTable_data" type="x-tmpl-mustache">
+    {{ #data }}
+        <tr>
+            <td>{{ created_date }}</td>
+
+            <td>{{ #last_name }} {{ last_name }},{{ /last_name }} {{ first_name }}</td>
+
+            {{ #unrounded_of_duration }}
+                <td>Finished</td>
+            {{ /unrounded_of_duration }}
+
+            {{ ^unrounded_of_duration }}
+                <td>In Progress</td>
+            {{ /unrounded_of_duration }}
+
+            {{ #description }}
+                <td>{{ description }}</td>
+            {{ /description }}
+
+            {{ ^description }}
+                <td>No description</td>
+            {{ /description }}
+
+            <td>{{ time_in }}</td>
+            <td>{{ time_out }}</td>
+            <td>{{ duration }} hours</td>
+            <td><button class="btn btn-xs btn-success edit-time" data-id="{{ id }}">Edit Description</button></td>
+        </tr>
+    {{ /data }}
+</script>
+{% endverbatim %}

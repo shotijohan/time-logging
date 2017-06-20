@@ -19,6 +19,7 @@ class Migration(migrations.Migration):
                 ('time_in', models.DateTimeField(null=True)),
                 ('time_out', models.DateTimeField(null=True)),
                 ('duration', models.FloatField(default=0.0)),
+                ('description', models.CharField(default=None, max_length=500)),
                 ('created_date', models.DateTimeField(auto_now_add=True)),
                 ('updated_date', models.DateTimeField(auto_now=True)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),

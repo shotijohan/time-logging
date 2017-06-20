@@ -7,11 +7,15 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type = "text/css"/>
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}" type = "text/css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+
+
 
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
-<body class="body" style="background-color:#5b5b5b">
+<body class="body" style="background-color:#9e9e9e">
 	<div class="container-fluid" style="min-height:95%; ">
 		<div class="row">
             <div class="col-sm-2">
@@ -27,7 +31,7 @@
                 <a href="/logout" class="btn btn-danger btn-xs">Logout</a>
             </div>
             <span class="pull-right account-name">
-                <strong>{{ user.last_name }}, {{ user.first_name }} </strong>
+                <strong>{{ user.last_name.title }}, {{ user.first_name.title }} </strong>
             </span>
         {% endif %}
         <br>
@@ -72,9 +76,15 @@
         <h1>{{firstName}} {{lastName}}</h1>Blog: {{blogURL}}
     </script>
     {% endverbatim %}
+
+    {% include 'timelogger/mustache_includes/home_table_row.html'%}
+
     <script src="{% static 'js/require.js' %}"></script>
     <script src="{% static 'js/config.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/datepicker.js' %}"></script>
 </body>
 
 </html>
