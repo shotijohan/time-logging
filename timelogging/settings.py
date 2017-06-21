@@ -115,3 +115,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+HIPCHAT_API_URL = 'https://api.hipchat.com/v2'
+HIPCHAT_ROOM_ID = "3953744"

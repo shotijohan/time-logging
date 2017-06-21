@@ -202,4 +202,11 @@ require(['zepto', 'moment', 'mustache', 'jquery','dataTables_bootstrap', 'datata
             }
         })
     });
+
+
+    $(document).on("keyup", function(e){
+        if(e.keyCode === 13){
+            $("#timein-timeout").click();
+        }
+    });
 });
