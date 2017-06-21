@@ -15,6 +15,7 @@ from timelogger.models import TimeInTimeOut, UserProfile
 from .constants import *
 from timelogging.settings import HIPCHAT_API_URL
 from timelogging.settings import HIPCHAT_ROOM_ID
+from timelogging.settings import TESTING_HIPCHAT_ROOM_ID
 from django.utils import timezone
 import requests
 import json
@@ -46,7 +47,7 @@ def notify_hipchat_timein_timeout_room(hipchat_user_token, message):
 
     hipchat_api_url = HIPCHAT_API_URL + \
                       "/room/" + \
-                      HIPCHAT_ROOM_ID + \
+                      TESTING_HIPCHAT_ROOM_ID + \
                       "/notification"
 
     requests.post(hipchat_api_url, data=payload, headers=headers)

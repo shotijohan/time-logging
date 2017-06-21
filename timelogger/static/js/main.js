@@ -36,6 +36,7 @@ require(['zepto', 'moment', 'mustache', 'jquery','dataTables_bootstrap', 'datata
     function renderTable(data){
         var home_table_data_template = $("#dataTable_data").html();
         var home_table_data = Mustache.to_html(home_table_data_template, data);
+        console.log(data);
         DATATABLE_OBJ.destroy();
         $("#dataTable").find("tbody").append(home_table_data);
         reinitializeTable();
@@ -106,7 +107,7 @@ require(['zepto', 'moment', 'mustache', 'jquery','dataTables_bootstrap', 'datata
         var todayUrlFormat = "start_date=" + encodeURIComponent(start)+ "&end_date=" + encodeURIComponent(end);
         var topFormat = "&top=" + top;
         var bottomFormat = "&bottom=" + bottom;
-        var orderFormat = "&order=-user__last_name";
+        var orderFormat = "&order=-created_date";
         var userIdFormat = "&user_id=" + user_id;
 
         if (initial){
@@ -134,7 +135,12 @@ require(['zepto', 'moment', 'mustache', 'jquery','dataTables_bootstrap', 'datata
 
     function reinitializeTable(){
         clearUpdateDescriptionModal();
-        DATATABLE_OBJ = jquery("#dataTable").DataTable();
+        //code below this message is a bad practice which disables error messages from datatable
+        jquery.fn.dataTable.ext.errMode = 'none';
+
+        DATATABLE_OBJ = jquery("#dataTable").DataTable({
+            order: [[0, "desc"]]
+        });
     }
 
 
@@ -205,7 +211,7 @@ require(['zepto', 'moment', 'mustache', 'jquery','dataTables_bootstrap', 'datata
 
 
     $(document).on("keyup", function(e){
-        if(e.keyCode === 13){
+        if(e.keyCode === 192){
             $("#timein-timeout").click();
         }
     });
