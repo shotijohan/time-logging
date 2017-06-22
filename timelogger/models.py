@@ -48,10 +48,11 @@ class UserProfile(models.Model):
     hipchat_send_notification_token = models.CharField(max_length=200)
 
     def __str__(self):
-        return str(self.user.id) + " " + \
-               self.user.last_name + "," + \
-               self.user.first_name + " (hipchat:" + \
-               self.hipchat_send_notification_token + ")"
+        id = str(self.user.id)
+        last_name = self.user.last_name
+        first_name = self.user.first_name
+        hipchat_send_notification_token = self.hipchat_send_notification_token
+        return "{} {},{} (hipchat:{})".format(id, last_name, first_name, hipchat_send_notification_token)
 
     def to_object(self):
         return {
