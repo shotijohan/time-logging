@@ -8,20 +8,23 @@ from django.db import models
 
 # Create your models here.
 class TimeInTimeOut(models.Model):
-    user = models.ForeignKey(User)
-    time_in = models.DateTimeField(null=True)
-    time_out = models.DateTimeField(null=True)
+    user = models.ForeignKey(User, related_name="timeintimeout")
+    time_in = models.DateTimeField(null=True, blank=True)
+    time_out = models.DateTimeField(null=True, blank=True)
     duration = models.FloatField(default=0.0)
-    description = models.CharField(max_length=500, null=True)
+    description = models.TextField(max_length=500, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return "id:" + str(self.id) + (self.user.last_name.title() + "," if self.user.last_name else "") + " " + \
-               (self.user.first_name.title() if self.user.first_name else self.user.username.title()) + \
-               " (" + self.time_in.strftime("%H:%M:%S") + \
-               "-" + (self.time_out.strftime("%H:%M:%S") if self.time_out else "In Progress") + \
-               ") total_hours:" + str(self.duration if self.duration else "")
+        id = str(self.id)
+        last_name = (self.user.last_name.title() + "," if self.user.last_name else "")
+        first_name = (self.user.first_name.title() if self.user.first_name else self.user.username.title())
+        time_in = self.time_in.strftime("%H:%M:%S")
+        time_out = (self.time_out.strftime("%H:%M:%S") if self.time_out else "In Progress")
+        duration = str(self.duration if self.duration else "")
+
+        return "id:{} {}, {} ({} - {}) total_hours:{}".format(id, first_name, last_name, time_in, time_out, duration)
 
     def to_object(self):
         return {
