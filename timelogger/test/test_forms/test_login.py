@@ -1,6 +1,3 @@
-from pprint import pprint
-
-import logging
 from django.contrib.auth import authenticate
 from django.test import TestCase
 from timelogger.models import User
@@ -9,11 +6,11 @@ from timelogger.models import User
 class LoginTestCase(TestCase):
     def setUp(self):
         User.objects.create_user(
-            username="test",
-            email="test",
-            first_name="test",
-            last_name="test",
-            password="test"
+            username='juandelacruz',
+            email='juandelacruz@gmail.com',
+            first_name='Juan',
+            last_name='Dela Cruz',
+            password='juantamad'
         )
 
     def test_authenticate(self):
@@ -26,4 +23,10 @@ class LoginTestCase(TestCase):
             password="test"
         )
 
-        self.assertEquals(user.is_authenticated(), True)
+        user2 = authenticate(
+            username="juandelacruz",
+            password="juantamad"
+        )
+
+        self.assertEquals(user, None)
+        self.assertEquals(user2.is_authenticated(), True)
